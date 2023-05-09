@@ -1,0 +1,199 @@
+:root {
+  --color-light: #361999;
+  --color-dark: #78fff1;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box k;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  font-size: 2rem;
+  font-family: Helvetica, sans-serif;
+  background: linear-gradient(
+    to bottom left,
+    var(--color-dark),
+    var(--color-light)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.form {
+  padding: 36px 24px;
+  border-radius: 15px;
+  max-width: 340px;
+  max-height: 100%;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.form__icon {
+  border-radius: 50%;
+  border: solid 3px rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 8px 24px 0 rgba(0, 0, 0, 0.3);
+  height: 72px;
+  width: 72px;
+  margin: 0 auto 24px;
+  overflow: hidden;
+  position: relative;
+}
+.form__icon::after,
+.form__icon::before {
+  content: "";
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.6);
+}
+.form__icon::before {
+  bottom: 0;
+  height: 24px;
+  width: 64px;
+}
+.form__icon::after {
+  bottom: 45%;
+  left: 50%;
+  height: 30px;
+  width: 30px;
+  transform: translateX(-50%);
+}
+
+.form__input-container {
+  margin-bottom: 32px;
+  position: relative;
+}
+.form__input {
+  width: 80%;
+  margin: 0px auto 32px;
+}
+.form__button {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.form__input,
+.form__button {
+  padding: 12px 24px;
+  font-size: 24px;
+  border: none;
+  border-radius: 1rem;
+  transition: box-shadow 0.3s, outline 0.3s;
+}
+.form,
+.form__input,
+.form__button {
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.35)
+  );
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.4);
+}
+.form__input,
+.form__button,
+.form__label {
+  color: rgba(255, 255, 255);
+}
+.form__label {
+  position: absolute;
+  left: 24px;
+  top: 30%;
+  transform: translateY(-50%);
+  font-style: italic;
+  cursor: text;
+  opacity: 0.6;
+  transition: left 0.3s, opacity 0.3s;
+}
+.form__line {
+  height: 3px;
+  width: 80%;
+  margin: 0px auto 32px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.form__input:focus + .form__label,
+.form__input:not(:placeholder-shown) + .form__label {
+  left: 150px;
+  opacity: 0;
+}
+.form__input:hover,
+.form__button:hover {
+  box-shadow: 0px 8px 12px 0 rgba(0, 0, 0, 0.35);
+}
+
+.form__input:focus,
+.form__button:focus {
+  outline: solid rgba(255, 255, 255, 0.5);
+}
+.form__button::after {
+  content: "";
+  display: block;
+  height: 100px;
+  width: 50px;
+  left: -70px;
+  top: -50%;
+  transform: skewX(-15deg);
+  background: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  transition: left 0.8s;
+}
+.form__button:hover::after {
+  left: 110%;
+}
+.background {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.background__dot {
+  height: 10vh;
+  width: 10vh;
+  border-radius: 50%;
+  background: linear-gradient(
+    to left,
+    var(--color-dark),
+    rgba(255, 255, 255, 0.3)
+  );
+}
+.background__dot:nth-child(1) {
+  height: 50vh;
+  width: 50vh;
+  position: absolute;
+  left: 0;
+  top: 5%;
+  animation: move1 10s linear infinite;
+}
+.background__dot:nth-child(2) {
+  animation: move2 13s infinite linear;
+  height: 30vh;
+  width: 30vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+@keyframes move1 {
+  from {
+    transform: translateX(-50vw);
+  }
+  to {
+    transform: translateX(100vw);
+  }
+}
+@keyframes move2 {
+  from {
+    transform: translateX(50vw);
+  }
+  to {
+    transform: translateX(-80vw);
+  }
+}

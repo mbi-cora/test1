@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background" aria-hidden="true">
+      <div class="background__dot"></div>
+      <div class="background__dot"></div>
+    </div>
+    <form class="form" autocomplete="off">
+      <div class="form__icon" aria-hidden="true"></div>
+      <div class="form__input-container" aria-label="user">
+        <input class="form__input" id="user" type="text" placeholder=" " />
+        <label class="form__label" for="user">User</label>
+      </div>
+      <div class="form__input-container">
+        <input
+          class="form__input"
+          aria-label="password"
+          id="password"
+          type="password"
+          placeholder=" "
+        />
+        <label class="form__label" for="password">Password</label>
+      </div>
+      <div class="form__line" aria-hidden="true"></div>
+      <button class="form__button">Login</button>
+    </form>
+  </body>
+</html>
